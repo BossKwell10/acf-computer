@@ -3,7 +3,6 @@ import Logo from "../../assets/logo.jpg";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
-
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
   );
@@ -17,13 +16,12 @@ export const Header = () => {
     }
   }, [darkMode]);
 
-
   return (
-    <>
+    <header>
       <nav className="bg-white dark:bg-gray-900">
-        <div className="border-b border-slate-200 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-3">
+        <div className="border-b border-slate-200 dark:border-b-0 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-3">
           <Link to="/" className="flex items-center">
-            <img src={Logo} className="mr-3 h-10" alt="Acf Computer Logo" />
+            <img src={Logo} className="mr-3 h-10" alt="CodeBook Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               ACF Computer
             </span>
@@ -37,6 +35,6 @@ export const Header = () => {
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 };
